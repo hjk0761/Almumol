@@ -33,11 +33,14 @@ class Solution:
             current = root
             while stack or current:
                 if current:
+                    # left
                     stack.append(current)
                     current = current.left
                 else:
+                    # center
                     current = stack.pop()
                     values.append(current.val)
+                    # right
                     current = current.right
             return values
         values = iterativeInorder(root)
