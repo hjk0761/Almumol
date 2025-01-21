@@ -14,18 +14,36 @@ nums를 시작지점 부터 탐색하여 자릿수 별 최대값을 저장하는
 
 class Solution:
     def maximumSum(self, nums: List[int]) -> int:
-        def getDigitOfNumber(num):
+        def getSumOfDigit(num):
             result = 0
             while num != 0:
                 result += num % 10
                 num = num // 10
             return result
-        
-        maxDigitOfNumber = {}
+        hashTable = {}
         answer = -1
         for num in nums:
-            digitOfNumber = getDigitOfNumber(num)
-            if digitOfNumber in maxDigitOfNumber:
-                answer = max(answer, num + maxDigitOfNumber[digitOfNumber])
-            maxDigitOfNumber[digitOfNumber] = max(num, maxDigitOfNumber.get(digitOfNumber, 0))
+            s = getSumOfDigit(num)
+            if s in hashTable:
+                answer = max(answer, hashTable[s] + num)
+            hashTable[s] = max(hashTable.get(s, 0), num)
         return answer
+    # 반복문 한번에 계산하는것 보다 sort하는게 더 빠름. 왜????
+    def maximumSum(self, nums: List[int]) -> int:
+        def getSumOfDigit(num):
+            result = 0
+            while num != 0:
+                result += num % 10
+                num = num // 10
+            return result
+        hashTable = defaultdict(list)
+        answer = -1
+        for num in nums:
+            s = getSumOfDigit(num)
+            hashTable[s].append(num)
+        for s in hashTable:
+            nums = sorted(hashTable[s], reverse = True)
+            if len(nums) > 1:
+                answer = max(answer, nums[0] + nums[1])
+        return answer
+            
