@@ -33,6 +33,11 @@
     <td align="center">5주차 시작</td>
     <td align="center">러쉬 조이썬 합류</td>
   </tr>
+    <tr>
+    <td align="center">2025-01-20 ~</td>
+    <td align="center">6주차 시작</td>
+    <td align="center"></td>
+  </tr>
 </table>
 
 <br/>
