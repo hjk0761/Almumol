@@ -1,6 +1,6 @@
 """
 title : Remove All Adjacent Duplicates in String
-link  : https://leetcode.com/problems/remove-all-duplicates-in-string
+link  : https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/
 
 description
 
