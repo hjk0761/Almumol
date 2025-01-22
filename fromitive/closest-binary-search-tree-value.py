@@ -9,21 +9,11 @@ BST와 target 값이 주어졌을 때 각 노드별로 target과 근접한 값�
 
 class Solution:
     def closestValue(self, root: Optional[TreeNode], target: float) -> int:
-        def compare(pair1, pair2):
-            if pair1[1] < pair2[1]:
-                return pair1
-            elif pair1[1] > pair2[1]:
-                return pair2
-            elif pair1[1] == pair2[1] and pair1[0] < pair2[0]:
-                return pair1
-            elif pair1[1] == pair2[1] and pair1[0] > pair2[0]:
-                return pair2
-
         stack = [root]
-        answer = (-1, float('inf')) 
+        answer = (root.val, abs(target - root.val)) 
         while stack:
             node = stack.pop()
-            answer = compare(answer, (node.val, abs(target - node.val)))
+            answer = min(answer, (node.val, abs(target - node.val)), key= lambda p : (p[1], p[0]))
             if target < node.val and node.left:
                 stack.append(node.left)
             if target > node.val and node.right:
