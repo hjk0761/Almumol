@@ -7,18 +7,20 @@ description
 """
 class Solution:
     def swapNodes(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
-        slow = head
+        # move kth node        
         fast = head
         for _ in range(k - 1):
             fast = fast.next
         begin = fast
+        
+        # move last k th node
+        slow = head
         fast = fast.next
         while fast:
             slow = slow.next
             fast = fast.next
         end = slow
-        tmp = begin.val
-        begin.val = end.val
-        end.val = tmp
+
+        begin.val, end.val = end.val, begin.val
         return head
         
