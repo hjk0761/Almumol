@@ -27,9 +27,10 @@ class Solution:
         answer = 0
         currentSum = 0
         for right in range(len(nums)):
+            # [0, 1 ,0] / -1 0 -1
             currentSum += 1 if nums[right] == 1 else -1
             if currentSum in counter:
                 answer = max(answer, right - counter[currentSum])
-            else: # not in
+            else: # not in 이전 currentSum 정보는 업데이트 하지 않는다.
                 counter[currentSum] = right
         return answer
