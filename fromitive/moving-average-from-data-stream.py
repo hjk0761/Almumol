@@ -15,12 +15,17 @@ from collections import deque
 class MovingAverage:
 
     def __init__(self, size: int):
-        self.size = size
         self.queue = deque()
+        self.size = size
+        self.totalSum = 0
 
     def next(self, val: int) -> float:
-        while len(self.queue) >= self.size:
-            self.queue.popleft()
+        answer = 0
+        while self.queue and len(self.queue) > self.size - 1:
+            old = self.queue.popleft()
+            self.totalSum -= old
+
         self.queue.append(val)
-        return sum(self.queue) / len(self.queue)
-        
+        self.totalSum += val
+
+        return self.totalSum / len(self.queue)
