@@ -1,6 +1,6 @@
 """
-title : Max Sliding Window
-link  : https://leetcode.com/problems/max-sliding-window
+title : Sliding Window Maximum
+link  : https://leetcode.com/problems/sliding-window-maximum
 
 description
 
