@@ -16,12 +16,18 @@ next greater는 단조 스택을 통해 구현해보자
 """
 class Solution:
     def nextGreaterElements(self, nums: List[int]) -> List[int]:
+        twiceNums = nums + nums
         stack = []
-        answer = [-1] * len(nums)
-        for i in range(len(nums) * 2):
-            num = nums[i % len(nums)]
-            while stack and stack[-1][1] < num:
-                j,_ = stack.pop()
-                answer[j] = num
-            stack.append([i % len(nums), num])
+        hashMap = {}
+        answer = []
+
+        for i in range(len(twiceNums)):
+            while stack and twiceNums[stack[-1]] < twiceNums[i]:
+                before = stack.pop()
+                hashMap[before] = twiceNums[i]
+            stack.append(i)
+
+        for i in range(len(nums)):
+            answer.append(hashMap.get(i, -1))
+        
         return answer
