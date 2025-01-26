@@ -1,7 +1,7 @@
 
 """
 title : Find Players With Zero or One Losses
-link  : https://leetcode.com/problems/find-players-with-zeros-or-one-losses
+link  : https://leetcode.com/problems/find-players-with-zero-or-one-losses
 
 description
 

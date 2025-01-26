@@ -38,3 +38,12 @@
 2. [금공강 사수](https://www.acmicpc.net/problem/27375)
 3. [돌아온 똥게임](https://www.acmicpc.net/problem/30701)
 4. [세상에는 많은 유튜버가 있고, 그중에서 버츄얼 유튜버도 존재한다](https://www.acmicpc.net/problem/29754)
+5. [과일 탕후루](https://www.acmicpc.net/problem/30804)
+6. [쉬운 최단거리](https://www.acmicpc.net/problem/14940)
+
+## Week5 (1/13 ~ 1/19)
+
+골드
+
+1. [별 찍기 - 10](https://www.acmicpc.net/problem/2447)
+2. [암호 만들기](https://www.acmicpc.net/problem/1759)

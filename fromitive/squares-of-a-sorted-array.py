@@ -58,7 +58,7 @@ class Solution:
                 result.append(squareLeft)
                 result.append(squareRight)
                 continue    
-        result.append(nums[left] ** 2)
+        result.append(nums[left] ** 2) # left == right
         return result[::-1]
 
     def editorialsortedSquares(self, nums: List[int]) -> List[int]:

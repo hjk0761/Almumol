@@ -1,6 +1,6 @@
 """  
 title : Maximum Number of Ballons
-link  : https://leetcode.com/problems/maximum-number-of-ballons
+link  : https://leetcode.com/problems/maximum-number-of-balloons/
 
 description
 소문자로 이루어진 문자열 s가 주어질 때 'ballons'를 만들 수 있는 최대 개수를 구하자.

@@ -2,7 +2,7 @@ name: Merge Open PRs
 on:
   schedule:
     - cron: '0 15 * * *' # KST 00:00
-    - cron: '50 16 * * *' # KST 01:00
+    - cron: '0 16 * * *' # KST 01:00
 
 jobs:
   test-job:

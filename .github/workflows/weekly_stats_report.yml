@@ -29,28 +29,54 @@ jobs:
       - name: Extract closed pull requests using API
         if: env.IS_SUNDAY == 'true'
         id: list-prs
-        run: |
+        run: | 
           API_URL="https://api.github.com/repos/${{ github.repository }}/pulls"
           TOKEN="${{ secrets.GITHUB_TOKEN }}"
           STATE="closed"
           PER_PAGE=100
           PAGE=1
-          ALL_PR_DATA="[]"
-      
+          OUTPUT_FILE="pr_data.json"
+          echo "[]" > $OUTPUT_FILE
+          
+          jq empty $OUTPUT_FILE || { echo "pr_data.json initialization failed"; exit 1; }
+          
           while true; do
             RESPONSE=$(curl -s -H "Authorization: Bearer $TOKEN" \
               -H "Accept: application/vnd.github.v3+json" \
               "$API_URL?state=$STATE&per_page=$PER_PAGE&page=$PAGE")
+          
+            if [ -z "$RESPONSE" ] || [ "$RESPONSE" == "[]" ]; then
+              echo "Empty API response at page $PAGE. Exiting loop."
+              break
+            fi
+          
             FILTERED_RESPONSE=$(echo "$RESPONSE" | jq '[.[] | {id, title, assignee, labels}]')
-            ALL_PR_DATA=$(echo "$ALL_PR_DATA" | jq ". + $FILTERED_RESPONSE")
+          
+            if [ -z "$FILTERED_RESPONSE" ] || [ "$FILTERED_RESPONSE" == "[]" ]; then
+              echo "Filtered response is empty at page $PAGE. Skipping."
+              break
+            fi
+          
+            echo "Merging filtered response into pr_data.json"
+            echo "$FILTERED_RESPONSE" > temp.json
+            echo "temp.json:"
+            cat temp.json
+            jq -s 'add' $OUTPUT_FILE <(jq . temp.json) > $OUTPUT_FILE.tmp && mv $OUTPUT_FILE.tmp $OUTPUT_FILE
+          
             LENGTH=$(echo "$FILTERED_RESPONSE" | jq '. | length')
             if [ "$LENGTH" -lt "$PER_PAGE" ]; then
               break
             fi
+          
             PAGE=$((PAGE + 1))
           done
-      
-          echo "$ALL_PR_DATA" > pr_data.json
+
+          echo "merged result:"
+          echo "$OUTPUT_FILE"
+          
+          jq empty $OUTPUT_FILE || { echo "Final pr_data.json is invalid JSON."; exit 1; }
+
+
 
       - name: Fetch Labels from Repository
         if: env.IS_SUNDAY == 'true'
