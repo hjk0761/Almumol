@@ -19,15 +19,20 @@ class Solution:
     def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
         answer = 0
         def dfs(node):
+            
             if not node:
                 return 0
             nonlocal answer
             left = dfs(node.left)
             right = dfs(node.right)
+            # 각 노드마다 최대값이 있는지 확인한다. 꼭 root를 거치는 것이 최대값이 아니다.
             answer = max(answer, left + right)
+            
+            # dfs 호출이 끝나면 현재 노드에서 최대 깊이를 구하게 된다. +1 을 하는 이유는 left 혹은 right의 와 현재 노드의 깊이를 더하기 때문이다.
             return max(left, right) + 1
         dfs(root)
         return answer
+
     def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
         paths = {}
         answer = 0
