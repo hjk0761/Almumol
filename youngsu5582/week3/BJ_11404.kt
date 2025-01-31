@@ -71,7 +71,7 @@ private fun bfs(ary: Array<LongArray>, visited: Array<BooleanArray>, queue: Muta
 private fun visit(ary: Array<LongArray>, visited: Array<BooleanArray>, pair: Pair<Int, Int>): Boolean =
     ary[pair.first][pair.second] != Long.MAX_VALUE && !visited[pair.first][pair.second]
 
-data class Element(
+private data class Element(
     val x: Int,
     val y: Int,
     val value: Long
