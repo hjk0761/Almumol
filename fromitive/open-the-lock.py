@@ -1,6 +1,6 @@
 """ 
-title : Open Lock
-link  : https://leetcode.com/problems/open-lock
+title : Open the Lock
+link  : https://leetcode.com/problems/open-the-lock
 
 description
 '0000' 부터 '9999'까지 회전할 수 있는 자물쇠가 주어진다.
