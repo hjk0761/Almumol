@@ -1,6 +1,6 @@
 """
-title : Evaluation Division
-link  : https://leetcode.com/problems/evaluation-division
+title : Evaluate Division
+link  : https://leetcode.com/problems/evaluate-division
 
 description
 
