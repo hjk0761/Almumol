@@ -38,6 +38,12 @@
     <td align="center">6주차 시작</td>
     <td align="center"></td>
   </tr>
+  </tr>
+    <tr>
+    <td align="center">2025-01-27 ~</td>
+    <td align="center">설 연휴 휴식</td>
+    <td align="center"></td>
+  </tr>
 </table>
 
 <br/>
