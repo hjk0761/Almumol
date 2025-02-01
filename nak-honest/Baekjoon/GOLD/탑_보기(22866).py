@@ -46,8 +46,3 @@ for i in range(N):
         answer.append(" ".join([str(count[i]), str(nearest[i])]))
 
 print(*answer, sep='\n')
-
-
-'''
-3 7 1 6 3 5 1 7
-'''
