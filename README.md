@@ -44,6 +44,12 @@
     <td align="center">설 연휴 휴식</td>
     <td align="center"></td>
   </tr>
+  </tr>
+    <tr>
+    <td align="center">2025-02-03 ~</td>
+    <td align="center">7주차 시작</td>
+    <td align="center">도비 합류</td>
+  </tr>
 </table>
 
 <br/>
@@ -73,6 +79,7 @@
    <td align="center"><a href="https://github.com/shin-jisong"><img src="https://avatars.githubusercontent.com/u/86762272?v=4" width="130px;" alt=""></a></td>
    <td align="center"><a href="https://github.com/xogns1514"><img src="https://avatars.githubusercontent.com/u/66353672?v=4" width="130px;" alt=""></a></td>
    <td align="center"><a href="https://github.com/youngsu5582"><img src="https://avatars.githubusercontent.com/u/98307410?v=4" width="130px;" alt=""></a></td>
+   <td align="center"><a href="https://github.com/Dobby-Kim"><img src="https://avatars.githubusercontent.com/u/113661364?v=4" width="130px;" alt=""></a></td>
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/robinjoon"><b>로빈</b></a></td>
@@ -80,6 +87,7 @@
     <td align="center"><a href="https://github.com/shin-jisong"><b>시소</b></a></td>
     <td align="center"><a href="https://github.com/xogns1514"><b>러쉬</b></a></td>
     <td align="center"><a href="https://github.com/youngsu5582"><b>조이썬</b></a></td>
+    <td align="center"><a href="https://github.com/Dobby-Kim"><b>도비</b></a></td>
   </tr>
 </table>
 
