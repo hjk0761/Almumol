@@ -7,9 +7,9 @@ description
 root 노드의 최소 depth를 구한다.
 
 """
-
+from collections import deque
 class Solution:
-    def minDepth(self, root: Optional[TreeNode]) -> int:
+    def minDepthWithDFS(self, root: Optional[TreeNode]) -> int:
         if not root:
             return 0
         answer = float('inf')
@@ -22,4 +22,23 @@ class Solution:
                 stack.append([node.right, depth + 1])
             if node.left:
                 stack.append([node.left, depth + 1])
+        return answer
+
+    def minDepthWithBFS(self, root: Optional[TreeNode]) -> int:
+        if not root:
+            return 0
+        queue = deque()
+        queue.append(root)
+        level = 1
+        while queue:
+            depth = len(queue)
+            for _ in range(depth):
+                node = queue.popleft()
+                if not node.left and not node.right:
+                    return level
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+            level += 1
         return answer
