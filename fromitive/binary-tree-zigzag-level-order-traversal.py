@@ -1,6 +1,6 @@
 """
 title : Binary Tree Zigzag Level Order Traversal
-link  : https://leetcode.com/problems/binary-tree-right-side-view
+link  : https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal
 
 description
 트리의 각 level 별 node 값을 탐색하는 알고리즘을 작성한다. 단, 짝수 번째 depth는 역으로 수집해야 한다.
