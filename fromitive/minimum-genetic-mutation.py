@@ -38,3 +38,25 @@ class Solution:
                     queue.append((nextG, step + 1))
                     seen.add(nextG)
         return -1
+
+    def minMutationTwo(self, startGene: str, endGene: str, bank: List[str]) -> int:
+        graph = defaultdict(list)
+        for gene in bank:
+            for i in range(len(gene)):
+                mutableGene = gene[:i] + "*" + gene[i + 1:]
+                graph[mutableGene].append(gene)
+        queue = deque()
+        queue.append((startGene, 0))
+        seen = set()
+        seen.add(startGene)
+        while queue:
+            gene, step = queue.popleft()
+            for i in range(len(gene)):
+                mutableGene = gene[:i] + "*" + gene[i + 1:]
+                for neighbor in graph[mutableGene]:
+                    if neighbor not in seen:
+                        if neighbor == endGene:
+                            return step + 1
+                        queue.append((neighbor, step + 1))
+                        seen.add(neighbor)
+        return -1
