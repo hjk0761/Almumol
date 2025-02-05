@@ -1,0 +1,47 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    static String change(String s, int idx) {
+        StringBuilder sb = new StringBuilder(s);
+        if (sb.charAt(idx) == '0') {
+            sb.setCharAt(idx, '1');
+        } else if (sb.charAt(idx) == '1') {
+            sb.setCharAt(idx, '0');
+        }
+        return sb.toString();
+    }
+    
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int N = Integer.parseInt(st.nextToken());
+        int M = Integer.parseInt(st.nextToken());
+        String[] arr = new String[N]; 
+        Map<String, Long> mp = new HashMap<>();
+        for(int i = 0; i < N; i++) {
+            arr[i] = br.readLine();
+            mp.put(arr[i], mp.getOrDefault(arr[i], 0L) + 1);
+        }
+
+        long result = 0;
+        for(int i = 0; i < N; i++) {
+            result += mp.get(arr[i]) - 1;
+            for(int j = 0; j < M; j++) {
+                String tmp = change(arr[i], j);
+                result += mp.getOrDefault(tmp, 0L);
+            }
+            for(int j = 0; j < M; j++) {
+                for(int k = j + 1; k < M; k++) {
+                    String tmp = change(arr[i], j);
+                    tmp = change(tmp, k);
+                    result += mp.getOrDefault(tmp, 0L);
+                }
+            }
+        }
+
+        System.out.println(result / 2);
+    }
+}
+
