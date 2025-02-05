@@ -14,7 +14,7 @@ def binary_search(target, arr):
 
 def binary_search_duplicates_right_most(target, arr):
     left = 0
-    right = len(arr) - 1
+    right = len(arr)
     while left < right:
         mid = (left + right) // 2
         if arr[mid] > target:
@@ -26,7 +26,7 @@ def binary_search_duplicates_right_most(target, arr):
 
 def binary_search_duplicates_left_most(target, arr):
     left = 0
-    right = len(arr) - 1
+    right = len(arr)
     while left < right:
         mid = (left + right) // 2
         if arr[mid] >= target:
