@@ -12,7 +12,9 @@ description
 
 target이 row안에 있는 배열 범위에 포함되었는지 확인하는 코드를 작성한 후 binary_search를 이용해서 해당 배열안에 Target이 있는지 확인한다.
 
-그렇게 하면 O(len(row) * log len(col)) 의 시간복잡도로 target을 찾을 수 있따. 
+그렇게 하면 O(len(row) * log len(col)) 의 시간복잡도로 target을 찾을 수 있다.
+
+또한 2D matrix를 1d로 바꿀 수 있는데 len(col) * len(row) - 1 이 matrix의 끝 Index로 지정하고 row 는 // len(col) col 은  % len(col)해주면 이 차원 좌표를 구할 수 있다.
 """
 
 class Solution:
@@ -34,4 +36,23 @@ class Solution:
                 if binary_search(target, matrix[r]) == -1:
                     return False
                 return True
+        return False
+    
+class Solution:
+    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
+        m = len(matrix)
+        n = len(matrix[0])                   
+        left = 0
+        right = m * n - 1
+        while left <= right:
+            mid = (left + right) // 2
+            row = mid // n
+            col = mid % n
+            num = matrix[row][col]
+            if target == num:
+                return True
+            if target < num:
+                right = mid - 1
+            elif target > num:
+                left = mid + 1
         return False
