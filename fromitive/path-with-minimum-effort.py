@@ -67,7 +67,8 @@ class Solution2:
 
         while heap:
             effort, row, col = heapq.heappop(heap)
-            seen.add((row, col))
+            # 중요! : seen은 이미 단계가 확정된 row, col만 방문여부를 체크. 다음에 갈 direction에 바로 체크하게 되면 effort를 비교할 수 없게 됨
+            seen.add((row, col)) 
             for dy, dx in directions:
                 nextRow = row + dy
                 nextCol = col + dx
