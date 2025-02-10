@@ -52,7 +52,7 @@
   </tr>
   </tr>
     <tr>
-    <td align="center">2025-02-010 ~</td>
+    <td align="center">2025-02-10 ~</td>
     <td align="center">8주차 시작</td>
     <td align="center"></td>
   </tr>
