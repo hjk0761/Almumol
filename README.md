@@ -50,6 +50,12 @@
     <td align="center">7주차 시작</td>
     <td align="center">도비 합류</td>
   </tr>
+  </tr>
+    <tr>
+    <td align="center">2025-02-010 ~</td>
+    <td align="center">8주차 시작</td>
+    <td align="center"></td>
+  </tr>
 </table>
 
 <br/>
