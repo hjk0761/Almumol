@@ -23,6 +23,13 @@ class Solution:
                 return depth
             return max(dfs(root.left, depth + 1), dfs(root.right, depth + 1))
         return dfs(root, 0)
+    
+    def maxDepthTwo(self, root: Optional[TreeNode]) -> int:
+        if not root:
+            return 0
+        left = self.maxDepthTwo(root.left)
+        right = self.maxDepthTwo(root.right)
+        return max(left, right) + 1
 
     def maxDepthStack(self, root: Optional[TreeNode]) -> int:
         if not root:
