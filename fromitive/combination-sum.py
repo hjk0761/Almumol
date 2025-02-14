@@ -15,16 +15,19 @@ target과 canditate가 주어질때 candidate의 중복을 허용하여 target n
 class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
         def backtrack(current, start, path):
+            if current > target:
+                return 
+
             if current == target:
                 answer.append(path[:])
                 return 
+
             for i in range(start, len(candidates)):
                 num = candidates[i]
-                if current + num <= target:
-                    path.append(num)
-                    backtrack(current + num, i, path)
-                    path.pop()
+                path.append(num)
+                backtrack(current + num, i, path)
+                path.pop()
+            
         answer = []
         backtrack(0, 0, [])
-
         return answer
