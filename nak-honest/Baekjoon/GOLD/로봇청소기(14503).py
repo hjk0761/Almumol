@@ -33,9 +33,3 @@ while True:
             c += reverse_dirs[d][1]
 
 print(answer)
-
-
-
-
-
-
