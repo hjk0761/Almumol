@@ -60,7 +60,7 @@
     <tr>
     <td align="center">2025-02-17 ~</td>
     <td align="center">9주차 시작</td>
-    <td align="center">타칸 합류</td>
+    <td align="center">타칸, 리브 합류</td>
   </tr>
 </table>
 
@@ -101,11 +101,13 @@
    <td align="center"><a href="https://github.com/youngsu5582"><img src="https://avatars.githubusercontent.com/u/98307410?v=4" width="130px;" alt=""></a></td>
    <td align="center"><a href="https://github.com/Dobby-Kim"><img src="https://avatars.githubusercontent.com/u/113661364?v=4" width="130px;" alt=""></a></td>
    <td align="center"><a href="https://github.com/jhon3242"><img src="https://avatars.githubusercontent.com/u/78288539?v=4" width="130px;" alt=""></a></td>
+   <td align="center"><a href="https://github.com/Minjoo522"><img src="https://avatars.githubusercontent.com/u/131349867?v=4" width="130px;" alt=""></a></td>
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/youngsu5582"><b>조이썬</b></a></td>
     <td align="center"><a href="https://github.com/Dobby-Kim"><b>도비</b></a></td>
     <td align="center"><a href="https://github.com/jhon3242"><b>타칸</b></a></td>
+    <td align="center"><a href="https://github.com/Minjoo522"><b>리브</b></a></td>
   </tr>
 </table>
 
