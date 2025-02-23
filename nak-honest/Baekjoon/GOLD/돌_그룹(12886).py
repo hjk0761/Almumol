@@ -23,3 +23,4 @@ while q:
             q.append(next)
 
 print(answer)
+
