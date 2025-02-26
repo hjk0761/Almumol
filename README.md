@@ -33,34 +33,35 @@
     <td align="center">5주차 시작</td>
     <td align="center">러쉬 조이썬 합류</td>
   </tr>
-    <tr>
+  <tr>
     <td align="center">2025-01-20 ~</td>
     <td align="center">6주차 시작</td>
     <td align="center"></td>
   </tr>
-  </tr>
-    <tr>
+  <tr>
     <td align="center">2025-01-27 ~</td>
     <td align="center">설 연휴 휴식</td>
     <td align="center"></td>
   </tr>
-  </tr>
-    <tr>
+  <tr>
     <td align="center">2025-02-03 ~</td>
     <td align="center">7주차 시작</td>
     <td align="center">도비 합류</td>
   </tr>
-  </tr>
-    <tr>
+  <tr>
     <td align="center">2025-02-10 ~</td>
     <td align="center">8주차 시작</td>
     <td align="center"></td>
   </tr>
-  </tr>
-    <tr>
+  <tr>
     <td align="center">2025-02-17 ~</td>
     <td align="center">9주차 시작</td>
     <td align="center">타칸, 리브 합류</td>
+  </tr>
+  <tr>
+    <td align="center">2025-02-24 ~</td>
+    <td align="center">10주차 시작</td>
+    <td align="center">배키 합류</td>
   </tr>
 </table>
 
@@ -102,12 +103,14 @@
    <td align="center"><a href="https://github.com/Dobby-Kim"><img src="https://avatars.githubusercontent.com/u/113661364?v=4" width="130px;" alt=""></a></td>
    <td align="center"><a href="https://github.com/jhon3242"><img src="https://avatars.githubusercontent.com/u/78288539?v=4" width="130px;" alt=""></a></td>
    <td align="center"><a href="https://github.com/Minjoo522"><img src="https://avatars.githubusercontent.com/u/131349867?v=4" width="130px;" alt=""></a></td>
+   <td align="center"><a href="https://github.com/ehBeak"><img src="https://avatars.githubusercontent.com/u/78892355?v=4" width="130px;" alt=""></a></td>
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/youngsu5582"><b>조이썬</b></a></td>
     <td align="center"><a href="https://github.com/Dobby-Kim"><b>도비</b></a></td>
     <td align="center"><a href="https://github.com/jhon3242"><b>타칸</b></a></td>
     <td align="center"><a href="https://github.com/Minjoo522"><b>리브</b></a></td>
+    <td align="center"><a href="https://github.com/ehBeak"><b>배키</b></a></td>
   </tr>
 </table>
 
