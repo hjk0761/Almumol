@@ -8,8 +8,9 @@ num1 num2가 오름차순으로 정렬되어있을 때 공통으로 들어가 �
 
 해결 방안
 
-1. set으로 만들어놓고 min 해도 됨
-2. 정석으로 two pointer를 활용해 pointer를 옮겨가며 비교해도 오케이
+1. set으로 만들어놓고 비교해가며 더하기 O(len(nums1) + len(nums2)) -> 
+2. 정석으로 two pointer를 활용해 pointer를 옮겨가며 비교해도 오케이 O(len(num1) + len(num2))
+3. Binary Search를 활용해서 좀 더 개선된 brute-force도 가능 O(len(num1) * log len(num2))
 """
 
 class Solution:
@@ -26,5 +27,27 @@ class Solution:
         return -1
 
     def getCommon(self, nums1: List[int], nums2: List[int]) -> int:
-        common = set(nums1) & set(nums2)
-        return min(common) if common else -1
+        set1 = set(nums1) # O(len(nums1))
+        for num in nums:
+            if num in set1: # O(1)
+                return num
+        return -1
+
+    def getCommon(self, nums1: List[int], nums2: List[int]) -> int:
+        def binarySearch(target, nums):
+            left = 0
+            right = len(nums) - 1
+            while left <= right:
+                mid = (left + right) // 2
+                if nums[mid] == target:
+                    return True
+                if nums[mid] > target:
+                    right = mid - 1
+                elif nums[mid] < target:
+                    left = mid + 1
+            return False
+
+        for num in nums1:
+            if binarySearch(num, nums2):
+                return num
+        return -1
