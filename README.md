@@ -129,6 +129,21 @@
 
 <br/>
 
+## 교수님
+
+<table>
+<tr>
+   <td align="center"><a href="https://github.com/BurningFalls"><img src="https://avatars.githubusercontent.com/u/30232837?v=4" width="130px;" alt=""></a></td>
+   <td align="center"><a href="https://github.com/donghoony"><img src="https://avatars.githubusercontent.com/u/31026350?v=4" width="130px;" alt=""></a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/BurningFalls"><b>폭포</b></a></td>
+    <td align="center"><a href="https://github.com/donghoony"><b>아루</b></a></td>
+  </tr>
+</table>
+
+<br/>
+
 ## 진행 방법
 
 1. 주 3/5회에 맞춰 정해진 수의 문제 풀기
