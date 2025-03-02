@@ -63,6 +63,11 @@
     <td align="center">10주차 시작</td>
     <td align="center">배키 합류</td>
   </tr>
+  <tr>
+    <td align="center">2025-03-03 ~</td>
+    <td align="center">11주차 시작</td>
+    <td align="center">콜리, 에버 합류</td>
+  </tr>
 </table>
 
 <br/>
@@ -111,6 +116,14 @@
     <td align="center"><a href="https://github.com/jhon3242"><b>타칸</b></a></td>
     <td align="center"><a href="https://github.com/Minjoo522"><b>리브</b></a></td>
     <td align="center"><a href="https://github.com/ehBeak"><b>배키</b></a></td>
+  </tr>
+  <tr>
+   <td align="center"><a href="https://github.com/coli-geonwoo"><img src="https://avatars.githubusercontent.com/u/148152234?v=4" width="130px;" alt=""></a></td>
+   <td align="center"><a href="https://github.com/helenason"><img src="https://avatars.githubusercontent.com/u/88581911?v=4" width="130px;" alt=""></a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/coli-geonwoo"><b>콜리</b></a></td>
+    <td align="center"><a href="https://github.com/helenason"><b>에버</b></a></td>
   </tr>
 </table>
 
