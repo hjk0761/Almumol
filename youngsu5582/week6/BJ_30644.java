@@ -3,7 +3,10 @@ package week6;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.StringTokenizer;
 
 // 14:37 - 15:10
 
@@ -36,7 +39,7 @@ public class BJ_30644 {
                 count++;
             }
             current = mp.get(ary[i]);
-            System.out.println(current.x+"\t"+ current.prev+"\t"+current.next+"\t"+count);
+            System.out.println(current.x + "\t" + current.prev + "\t" + current.next + "\t" + count);
         }
 
         System.out.println(count);
@@ -66,8 +69,9 @@ public class BJ_30644 {
             boolean nextIsEqual = next != null && next.x == x;
             return prevIsEqual || nextIsEqual;
         }
-        public String toString(){
-            return String.format("Cutting [ x: %d ]",x);
+
+        public String toString() {
+            return String.format("Cutting [ x: %d ]", x);
         }
     }
 }
