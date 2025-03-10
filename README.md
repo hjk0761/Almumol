@@ -68,6 +68,11 @@
     <td align="center">11주차 시작</td>
     <td align="center">콜리, 에버 합류</td>
   </tr>
+  <tr>
+    <td align="center">2025-03-10 ~</td>
+    <td align="center">12주차 시작</td>
+    <td align="center"></td>
+  </tr>
 </table>
 
 <br/>
