@@ -73,6 +73,11 @@
     <td align="center">12주차 시작</td>
     <td align="center"></td>
   </tr>
+  <tr>
+    <td align="center">2025-03-17 ~</td>
+    <td align="center">13주차 시작</td>
+    <td align="center"></td>
+  </tr>
 </table>
 
 <br/>
