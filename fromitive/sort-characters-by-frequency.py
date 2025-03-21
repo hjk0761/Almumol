@@ -10,6 +10,8 @@ description
 - O(Nlog(N))
 문자를 빈도수 순으로 내림차순 정렬한 후 합친다.
 
+- O(N)
+문자열 빈도수를 기반으로 한 bucket sort를 할 수 있다. 
 """
 
 from collections import Counter
@@ -25,4 +27,18 @@ class Solution:
         for count, ch in pairArray:
             answer += ch * count
         return answer
+    from collections import Counter, defaultdict
+    
+    def frequencySort(self, s: str) -> str:
+        #O(N)
+        counter = Counter(s)
+        maxFrequency = max(counter.values())
+        bucket = [[] for _ in range(maxFrequency + 1)]
+        for c, i in counter.items():
+            bucket[i].append(c * i)
         
+        answer = []
+        for i in range(len(bucket) - 1, -1, -1):
+            answer.append("".join(bucket[i]))
+        
+        return "".join(answer)
