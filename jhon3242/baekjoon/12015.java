@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.StringTokenizer;
 
-public class Main2 {
+public class Main {
     static int N;
     static int[] graph;
 
