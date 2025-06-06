@@ -109,3 +109,4 @@
 |2025-05-29|23주차 3회차|[15809](/hjk0761/15809/README.md)|골드3|Disjoint-set|
 |2025-06-02|24주차 1회차|[22254](/hjk0761/22254/README.md)|골드3|Binary-search|
 |2025-06-02|24주차 2회차|[32984](/hjk0761/32984/README.md)|골드3|Binary-search|
+|2025-06-06|24주차 3회차|[19591](/hjk0761/19591/README.md)|골드3|Implementation|
