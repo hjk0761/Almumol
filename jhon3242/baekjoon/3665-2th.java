@@ -4,8 +4,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.reflect.Array;
+import java.util.ArrayDeque;
 import java.util.Arrays;
+import java.util.Deque;
 import java.util.PriorityQueue;
+import java.util.Queue;
 import java.util.StringTokenizer;
 /*
 
@@ -28,7 +31,6 @@ import java.util.StringTokenizer;
 public class Main2 {
     static int N;
     static int M;
-    static int[] indegree;
     static boolean[][] graph;
 
     public static void main(String[] args) throws IOException {
@@ -39,15 +41,17 @@ public class Main2 {
         while (T-- > 0) {
 
             N = Integer.parseInt(br.readLine());
-            indegree = new int[N + 1];
             graph = new boolean[N + 1][N + 1];
 
-            int[] oldRank = Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt)
-                    .toArray();
+            int[] oldRank = new int[N + 1];
+            st = new StringTokenizer(br.readLine());
+            for (int i = 1; i <= N; i++) {
+                oldRank[i] = Integer.parseInt(st.nextToken());
+            }
 
-            for (int i = 1; i < N; i++) {
+            for (int i = 1; i <= N; i++) {
                 int cur = oldRank[i];
-                for (int j = i - 1; j >= 0; j--) {
+                for (int j = i + 1; j <= N; j++) {
                     int next = oldRank[j];
                     graph[cur][next] = true;
                 }
@@ -66,48 +70,50 @@ public class Main2 {
                     graph[v][u] = false;
                 }
             }
-
             topologicalSort();
         }
     }
 
     private static void topologicalSort() {
-        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        Deque<Integer> queue = new ArrayDeque<>();
+        StringBuilder sb = new StringBuilder();
+        int[] indegree = new int[N + 1];
         for (int i = 1; i <= N; i++) {
-            int count = 0;
             for (int j = 1; j <= N; j++) {
                 if (graph[i][j]) {
-                    count++;
+                    indegree[j]++;
                 }
             }
-            indegree[i] = count;
+        }
+
+        for (int i = 1; i <= N; i++) {
             if (indegree[i] == 0) {
-                pq.add(i);
+                queue.add(i);
             }
         }
 
         for (int i = 0; i < N; i++) {
-            if (pq.isEmpty()) {
+            if (queue.isEmpty()) {
                 System.out.println("IMPOSSIBLE");
                 return;
             }
-            if (pq.size() != 1) {
+            if (queue.size() != 1) {
                 System.out.println("?");
                 return;
             }
 
-            int polled = pq.poll();
-            System.out.print(polled + " ");
+            int polled = queue.poll();
+            sb.append(polled).append(" ");
 
             for (int j = 1; j <= N; j++) {
-                if (graph[j][polled]) {
+                if (graph[polled][j]) {
                     indegree[j]--;
                     if (indegree[j] == 0) {
-                        pq.add(j);
+                        queue.add(j);
                     }
                 }
             }
         }
-        System.out.println();
+        System.out.println(sb);
     }
 }
