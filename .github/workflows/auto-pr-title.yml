@@ -21,7 +21,6 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const core = require('@actions/core');
             const mapping = JSON.parse(process.env.PR_CREATOR_MAPPING);
             const actor = context.actor;
             const displayName = mapping[actor] || actor;
