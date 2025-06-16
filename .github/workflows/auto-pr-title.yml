@@ -1,0 +1,63 @@
+# .github/workflows/auto-pr-title.yml
+name: Auto PR Title
+
+on:
+  pull_request:
+    types: [opened]
+
+env:
+  PR_CREATOR_MAPPING: '{"jhon3242":"타칸","hjk0761":"무빈"}'
+  # 한국 시간 2025-06-16 00:00:00 (KST)
+  WEEK_START_DATE: '2025-06-16T00:00:00+09:00'
+  WEEK_NUMBER_BASE: '26'
+
+jobs:
+  set-pr-title:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 계산 및 제목 생성
+        id: calculate
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const mapping = JSON.parse(process.env.PR_CREATOR_MAPPING);
+            const actor = context.actor;
+            const displayName = mapping[actor] || actor;
+
+            const createdAt = new Date(context.payload.pull_request.created_at);
+            const week0 = new Date(process.env.WEEK_START_DATE);
+            const base = parseInt(process.env.WEEK_NUMBER_BASE, 10);
+
+            const msPerWeek = 7 * 24 * 60 * 60 * 1000;
+            const diff = createdAt - week0;
+            const weekOffset = diff >= 0
+              ? Math.floor(diff / msPerWeek)
+              : Math.ceil(diff / msPerWeek);
+            const weekCount = base + weekOffset;
+
+            const thisWeekStart = new Date(week0.getTime() + weekOffset * msPerWeek);
+
+            const allPRs = await github.rest.pulls.list({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'all',
+              per_page: 100
+            });
+
+            const prsThisWeek = allPRs.data.filter(pr => {
+              const prDate = new Date(pr.created_at);
+              return pr.user.login === actor
+                && prDate >= thisWeekStart
+                && prDate < thisWeekStart.getTime() + msPerWeek;
+            });
+
+            const runNumber = prsThisWeek.length + 1;
+            const title = `[${weekCount}주차 ${runNumber}회차] ${displayName}`;
+            return { title };
+
+      - name: PR 제목 업데이트
+        uses: octokit/request-action@v2
+        with:
+          route: PATCH /repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}
+          title: ${{ steps.calculate.outputs.title }}
