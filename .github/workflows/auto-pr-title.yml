@@ -21,6 +21,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
+            const core = require('@actions/core');
             const mapping = JSON.parse(process.env.PR_CREATOR_MAPPING);
             const actor = context.actor;
             const displayName = mapping[actor] || actor;
@@ -54,7 +55,7 @@ jobs:
 
             const runNumber = prsThisWeek.length + 1;
             const title = `[${weekCount}주차 ${runNumber}회차] ${displayName}`;
-            return { title };
+            core.setOutput("title", title);
 
       - name: PR 제목 업데이트
         run: |
