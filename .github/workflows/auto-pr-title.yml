@@ -48,6 +48,7 @@ jobs:
             const prsThisWeek = allPRs.data.filter(pr => {
               const prDate = new Date(pr.created_at);
               return pr.user.login === actor
+                && pr.merged_at !== null
                 && prDate >= thisWeekStart
                 && prDate < thisWeekStart.getTime() + msPerWeek;
             });
