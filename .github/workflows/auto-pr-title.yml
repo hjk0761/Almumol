@@ -6,7 +6,7 @@ on:
     types: [opened]
 
 env:
-  PR_CREATOR_MAPPING: '{"jhon3242":"타칸","hjk0761":"무빈","coli-geonwoo":"콜리","fromitive":"포케","nak-honest":"낙낙","shin-jisong":"시소","slimsha2dy":"알파카","hyxrxn":"아토","Dobby-Kim":"도비",jminkkk":"몰리","youngsu5582":"조이썬","Minjoo522":"리브","xogns1514":"러쉬","ikjo39":"다온","helenason":"에버","robinjoon":"로빈","ehBeak":"배키","BurningFalls":"폭포"}'
+  PR_CREATOR_MAPPING: '{"jhon3242":"타칸","hjk0761":"무빈","coli-geonwoo":"콜리","fromitive":"포케","nak-honest":"낙낙","shin-jisong":"시소","slimsha2dy":"알파카","hyxrxn":"아토","Dobby-Kim":"도비","jminkkk":"몰리","youngsu5582":"조이썬","Minjoo522":"리브","xogns1514":"러쉬","ikjo39":"다온","helenason":"에버","robinjoon":"로빈","ehBeak":"배키","BurningFalls":"폭포"}'
   # 한국 시간 2025-06-16 00:00:00 (KST)
   WEEK_START_DATE: '2025-06-16T00:00:00+09:00'
   WEEK_NUMBER_BASE: '26'
