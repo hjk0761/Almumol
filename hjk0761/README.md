@@ -141,3 +141,4 @@
 |2025-07-18|30주차 5회차|[3030](/hjk0761/3030/README.md)|골드1|Implementation|
 |2025-07-19|30주차 6회차|[23747](/hjk0761/23747/README.md)|골드5|Graph-travelsal|
 |2025-07-20|30주차 7회차|[1092](/hjk0761/01092/README.md)|골드5|Greedy|
+|2025-07-21|31주차 1회차|[31396](/hjk0761/31396/README.md)|플래5|Greedy&Binary-search|
