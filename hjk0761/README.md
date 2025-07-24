@@ -144,3 +144,4 @@
 |2025-07-21|31주차 1회차|[31396](/hjk0761/31396/README.md)|플래5|Greedy&Binary-search|
 |2025-07-22|31주차 2회차|[02213](/hjk0761/02213/README.md)|골드1|DP%&TREE|
 |2025-07-23|31주차 3회차|[16566](/hjk0761/16566/README.md)|플래5|Binary-search&Disjoint-set|
+|2025-07-24|31주차 4회차|[12972](/hjk0761/12972/README.md)|골드1|Ad-hoc|
